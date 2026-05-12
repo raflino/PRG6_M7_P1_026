@@ -1,11 +1,6 @@
-// services/api.js
-
-// Data awal untuk presensi (bisa digabung dengan laporan kereta)
 const mockPresensiData = [
  
 ];
-
-// Fungsi untuk mengambil riwayat presensi mahasiswa
 export const fetchPresensiByNim = async (nim) => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -15,7 +10,6 @@ export const fetchPresensiByNim = async (nim) => {
   });
 };
 
-// Fungsi untuk submit presensi baru dari QR Code
 export const submitPresensi = async (qrData, nimMhs) => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -37,7 +31,6 @@ export const submitPresensi = async (qrData, nimMhs) => {
   });
 };
 
-// Export semua fungsi
 export default {
   fetchPresensiByNim,
   submitPresensi

@@ -14,8 +14,6 @@ const HomeScreen = ({ navigation }) => {
     const [permission, requestPermission] = useCameraPermissions();
     const [scanned, setScanned] = useState(false);
     const [loading, setLoading] = useState(false);
-    
-    // Ganti dengan NIM asli Anda (bisa dari login nanti)
     const NIM_MAHASISWA = "0325260031";
 
     const handleBarCodeScanned = async ({ data }) => {
@@ -24,10 +22,10 @@ const HomeScreen = ({ navigation }) => {
         setScanned(true);
         
         try {
-            // Parse QR Code (format JSON)
+            
             const qrData = JSON.parse(data);
             
-            // Validasi data QR
+            
             if (!qrData.kodeMk || !qrData.pertemuanKe || !qrData.ruangan) {
                 Alert.alert(
                     "QR Tidak Valid",
@@ -37,7 +35,6 @@ const HomeScreen = ({ navigation }) => {
                 return;
             }
             
-            // Tampilkan konfirmasi
             Alert.alert(
                 "Konfirmasi Presensi",
                 `Mata Kuliah: ${qrData.kodeMk}\nPertemuan ke-${qrData.pertemuanKe}\nRuangan: ${qrData.ruangan}\n\nLanjutkan presensi?`,
@@ -135,7 +132,6 @@ const HomeScreen = ({ navigation }) => {
                 }}
             />
             
-            {/* Overlay untuk panduan scan */}
             <View style={styles.overlay}>
                 <View style={styles.scanArea}>
                     <View style={styles.cornerTopLeft} />
